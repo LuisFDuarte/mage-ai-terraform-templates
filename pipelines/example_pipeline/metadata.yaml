@@ -7,6 +7,15 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: load_titanic
+  executor_type: k8s
+  executor_config:
+    namespace: default
+    resource_limits:
+      cpu: 1000m
+      memory: 2048Mi
+    resource_requests:
+      cpu: 500m
+      memory: 1024Mi
 - all_upstream_blocks_executed: true
   downstream_blocks:
   - export_titanic_clean

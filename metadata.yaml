@@ -53,3 +53,14 @@ notification_config:
   teams_config:
     webhook_url: "{{ env_var('MAGE_TEAMS_WEBHOOK_URL') }}"
 project_uuid: 6125f7376e2849a59f2d7ba0fdb89c0a
+
+k8s_executor_config:
+  job_name_prefix: data-prep
+  namespace: default
+  resource_limits:
+    cpu: 1000m
+    memory: 2048Mi
+  resource_requests:
+    cpu: 500m
+    memory: 1024Mi
+  service_account_name: default
